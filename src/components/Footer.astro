@@ -1,0 +1,98 @@
+---
+import "@/styles/global.css";
+import "tailwindcss";
+import { Clock, Phone, Instagram } from "@lucide/astro";
+---
+
+<section>
+  <footer class="bg-[#000E22] relative flex">
+    <div class="mx-auto w-full max-w-screen-xl py-6 lg:py-25">
+      <div class="md:flex md:justify-items-start">
+        <div class="mb-6 md:mb-0">
+          <a href="#" class="flex items-center">
+            <img src="/mask-group.svg" class="h-8 me-3" alt="Yukari Logo" />
+            <span
+              class="self-center text-2xl font-normal whitespace-nowrap text-white"
+              >LPK Yukari Indonesia</span
+            >
+          </a>
+          <p
+            class="self-center text-1xs font-normal whitespace-nowrap text-white"
+          >
+            Wujudkan Mimpi dan Karir di Jepang Bersama Kami
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-5 sm:gap-6 sm:grid-cols-2 ml-32">
+          <div>
+            <h2
+              class="mb-5 text-sm font-semibold text-white uppercase dark:text-white"
+            >
+              Navigation
+            </h2>
+            <ul class="text-white font-normal">
+              <li class="mb-8">
+                <a href="#" class="hover:underline">Home</a>
+              </li>
+              <li class="mb-8">
+                <a href="#" class="hover:underline">About</a>
+              </li>
+              <li class="mb-8">
+                <a href="#" class="hover:underline">Programs</a>
+              </li>
+              <li class="mb-8">
+                <a href="#" class="hover:underline">Galery</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ml-0">
+            <h2
+              class="mb-2 text-sm font-semibold text-white uppercase dark:text-white"
+            >
+              Address & Contact
+            </h2>
+            <ul class="text-white font-normal">
+              <li class="mb-4 text-justify">
+                <p>
+                  Ruko Harmoni Hz 2 No.40-41, Pusaka Rakyat, Kec. Tarumajaya,
+                  Kabupaten Bekasi, Jawa Barat 17214
+                </p>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="flex flex-row gap-2 text-justify">
+                  <Clock color="#FAF7F3" size="18" />
+                  Senin-Jum’at: 09.00 - 16.00 WIB
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="flex flex-row gap-2 text-justify">
+                  <Phone color="#FAF7F3" size="18" />
+                  (021) 38714060
+                </a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="flex flex-row gap-2 text-justify">
+                  <Instagram color="#FAF7F3" size="18" />
+                  yukari_indonesia
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex flex-row gap-2 text-justify">
+                  <img src="/assets/svgs/tiktok.svg" alt="tiktok" />
+                  yukari_indonesia
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="my-5 sm:mx-auto lg:my-5"></div>
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm text-white sm:text-center"
+          >© 2025 <a href="#" class="hover:underline">BTEKLabs | </a>All Rights
+          Reserved.
+        </span>
+      </div>
+    </div>
+  </footer>
+</section>

@@ -1,0 +1,44 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import Background from "@/components/Background.astro";
+import Fasilitases from "./fasilitases.astro";
+---
+
+<section class="relative flex">
+  <Background />
+  <div
+    class="absolute top-[55vh] right-0 z-10 bg-black/50 text-white p-5 max-w-[56vh] h-[36vh]"
+  >
+    <div class="pr-15">
+      <p class="text-wrap text-sm/6 leading-relaxed font-rethink">
+        Melangkahlah dengan penuh kepastian. Karena di LPK Yukari, kami
+        berkomitmen untuk menuntun Anda dalam perjalanan meniti karir di Jepang
+        — dengan penuh perhatian, integritas, dan dukungan di setiap langkahnya.
+      </p>
+      <div class="mt-2">
+        <a
+        href="#"
+        class="inline-block mt-4 px-4 py-2 bg-transparant text-white font-semibold border-2 transition font-rethink"
+      >
+        KENALI YUKARI LEBIH DEKAT
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute z-10 mt-[65vh] max-w-[40]">
+    <div class="relative flex h-screen items-center justify-between px-12 z-10">
+      <!-- Content Desc -->
+      <div class="">
+        <h1 class="text-8xl tracking-[.15em] font-bold font-rethink text-white animate-fadeIn">
+          WALK THE FUTURE
+        </h1>
+        <h3 class="text-2xl text-gray-200 tracking-[.15] font-barlow font-semibold leading-relaxed animate-fadeIn">
+            未 来 を と も に 歩 む
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+<Fasilitases/>

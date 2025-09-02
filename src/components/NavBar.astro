@@ -1,0 +1,39 @@
+---
+import "@/styles/global.css";
+import "tailwindcss";
+import { Button } from "./ui/button";
+---
+
+<nav class="absolute top-0 left-0 w-full z-20">
+  <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-bold text-white">
+      <img src="/mask-group.svg" alt="Yukari Logo" class="w-35 h-20" />
+    </a>
+
+    <!-- Menu NavBar -->
+    <div class="space-x-8">
+      <a href="#home" class="text-white hover:text-gray-200 font-normal">Beranda</a>
+      <a href="#about" class="text-white hover:text-gray-200 font-normal">Tentang Kami</a>
+      <a href="#services" class="text-white hover:text-gray-200 font-normal">Program</a>
+      <a href="#contact" class="text-white hover:text-gray-200 font-normal">Galeri</a>
+      <a href="#contact" class="text-white hover:text-gray-200 font-normal">Artikel</a>
+    </div>
+
+    <div class="space-x-8">
+      <a href="#">
+        <Button
+          variant={"normalButton"}
+          className="border-2 border-white text-white font-normal px-3 py-5"
+          >Hubungi Kami</Button
+        >
+      </a>
+      <a href="#">
+        <Button
+          variant={"normalButton"}
+          className="bg-red-600 text-white font-normal px-3 py-6">Daftar Sekarang</Button
+        >
+      </a>
+    </div>
+  </div>
+</nav>
