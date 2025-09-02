@@ -5,30 +5,31 @@ import { Handshake, ThumbsUp, Sheet, BicepsFlexed } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 ---
 
-<section class="bg-[#AB0103] text-white py-16 lg:py-30">
-  <div class="max-w-5xl mx-auto">
-    <Separator orientation="vertical" className="bg-white mx-4"/>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-15 md:gap-8 text-center">
-      <div class="flex flex-col items-center justify-center relative">
-        <div class="mb-4"><Handshake size={80} color="#FFFFFF" /></div>
-        <p class="text-2xl">Dukungan Karir</p>
-        <Separator orientation="horizontal" className="bg-white my-4 mb-15 mt-15" />
-      </div>
-      <div class="flex flex-col items-center justify-center relative">
-        <div class="mb-4"><ThumbsUp size={80} color="#FFFFFF" /></div>
-        <p class="text-2xl mb-4">Belajar Flexible</p>
-        <Separator orientation="horizontal" className="bg-white mb-15 mt-11" /> 
-      </div>
-      <div class="flex flex-col items-center justify-center relative">
-        <div class="mb-4"><Sheet size={80} color="#FFFFFF" /></div> 
-        <p class="text-2xl">Pengajar Profesional</p>
-      </div> 
-      <div class="flex flex-col items-center justify-center relative">
-        <div class="mb-4">
-          <BicepsFlexed size={80} color="#FFFFFF" />
-        </div>
-        <p class="text-2xl">Dukungan Karir</p>
-      </div>
+<section class="bg-[#AB0103] text-white py-10 lg:py-25">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 grid-rows-2 gap-14 relative">
+    <Separator orientation="vertical" className="absolute inset-y-0 left-1/2 bg-white w-[2px] hidden md:block" />
+    <div class="flex flex-col items-center justify-center text-center">
+      <Handshake className="w-20 h-20 mb-4 text-white" />
+      <p class="text-2xl">Dukungan Karir</p>
+      <Separator orientation="horizontal" className="bg-white mt-20"/>
+    </div>
+    <div class="flex flex-col items-center justify-center text-center">
+      <ThumbsUp className="w-20 h-20 mb-4 text-white" />
+      <p class="text-2xl">Belajar Flexible</p>
+      <Separator orientation="horizontal" decorative className="bg-white mt-20" /> 
+    </div>
+
+    <div class="flex flex-col items-center justify-center text-center">
+      <Sheet className="w-20 h-20 mb-4 text-white" />
+      <p class="text-2xl">Pengajar Profesional</p>
+    </div>
+    <div class="flex flex-col items-center justify-center text-center">
+      <BicepsFlexed className="w-20 h-20 mb-4 text-white" />
+      <p class="text-2xl">Skill Development</p>
     </div>
   </div>
 </section>
+
+
+
+
