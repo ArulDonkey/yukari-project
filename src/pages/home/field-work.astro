@@ -1,0 +1,16 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import MyCarousel from "./component/MyCarousel.tsx";
+---
+
+<section>
+  <div class="bg-[#FFFFFF] p-25">
+    <h2 class="font-rethink font-normal text-[#AB0103] text-3xl">業種</h2>
+    <h1 class="font-rethink font-medium text-[#171826] text-5xl mt-5">
+      Bidang Pekerjaan
+    </h1>   
+    <!-- Caraousel Imaage Galery -->
+    <MyCarousel client:load/>
+  </div>
+</section>

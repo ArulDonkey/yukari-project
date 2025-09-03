@@ -14,7 +14,6 @@ export function Components({ items }: ComponentsProps) {
   return (
     <section className="bg-[#AB0103] text-white py-16 lg:py-30">
       <div className="max-w-5xl mx-auto grid grid-cols-2 grid-rows-2 relative">
-        {/* Garis tengah */}
         <Separator
           orientation="vertical"
           className="absolute inset-y-0 left-1/2 bg-white w-[2px] hidden md:block"
