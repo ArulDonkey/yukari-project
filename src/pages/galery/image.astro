@@ -1,0 +1,15 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { dataGalery } from "@/data/galery";
+---
+
+<section>
+    <div class="bg-[#FFFFFF] h-[1650px]">
+        <div class="flex flex-wrap grid-cols-2 grid-row-3 items-center justify-center gap-[48px]">
+        {dataGalery.map((galery)=>(
+            <img src={galery.image} alt="galery"/>
+        ))}
+    </div>
+    </div>
+</section>

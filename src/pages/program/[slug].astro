@@ -1,0 +1,91 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import LayOutMain from "@/layouts/LayOutMain.astro";
+import { dummyProgram } from "@/data/programs";
+import { ArrowUpRight } from "lucide-react";
+
+export async function getStaticPaths() {
+  return dummyProgram.map((program) => ({
+    params: { slug: program.slug },
+    props: { program },
+  }));
+}
+
+const { program } = Astro.props;
+---
+
+<LayOutMain>
+  <div
+    class="relative flex flex-wrap bg-black backdrop-brightness-50 bg-no-repeat bg-center bg-cover h-full w-full"
+  ><img src={program.background} alt="Program Background">
+    <div class="absolute top-[550px] p-16 z-10 flex flex-col items-start justify-start">
+      <div>
+        <h1
+          class="font-rethink font-semibold text-[#FFFFFF] text-[32px] tracking-wide"
+        >
+          {program.abbreviation}
+        </h1>
+        <h1 class="font-rethink font-semibold text-[#FFFFFF] text-[128px]">
+          {program.title}
+        </h1>
+        <h1
+          class="font-rethink font-semibold text-[#FFFFFF] text-[32px] tracking-wide"
+        >
+          {program.details}
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Program -->
+  <section>
+    <div class="bg-[#FFFFFF] w-full h-[558px] p-16">
+        <div class="flex flex-row grid-cols-2 grid-rows-2 gap-[48px] items-start justify-between">
+            <div class="gap-[48px]">
+                <h1 class="font-barlow font-normal text-[#AB0103] text-[48px]">本プログラムについて</h1>
+                <h1 class="font-barlow font-normal text-[#171826] text-[85px]">Tentang Program</h1>
+            </div>
+            <div class="h-[400px] w-[464px]">
+                <p class="font-barlow font-medium text-[#171826] text-[20px]">{program.desc}</p>
+                <p class="font-barlow font-medium text-[#171826] text-[20px] mt-10">{program.descJapanese}</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Simulasi -->
+   <section>
+    <div class="bg-[#FFFFFF] w-full h-[1223px] p-16">
+        <div class="flex flex-col items-center justify-center gap-[48px] ">
+            <h1 class="font-barlow font-medium text-[#171826] text-[64px] tracking-tight">Simulasi Lama Tinggal & Bekerja di Jepang</h1>
+            <img src="/assets/images/image 19.png" alt="Gambar Simulasi">
+        </div>
+    </div>
+   </section>
+
+   <!-- Call To Action -->
+    <section>
+  <div
+    class="bg-[url('/assets/images/footer-image.png')] bg-no-repeat bg-center bg-cover h-[416px] w-full"
+  >
+    <div class="flex flex-row items-center justify-between">
+      <div
+        class="bg-[#00000066] w-[416px] h-[156px] blur-[4] mt-[145px] flex items-center justify-center"
+      >
+        <h1 class="font-barlow font-medium text-[48px] text-[#FFFFFF] ml-8">
+          Karir Impianmu dimulai dari sini.
+        </h1>
+      </div>
+      <a href="#">
+        <div
+          class="bg-[#00000066] border-[2px] p-5 w-[195px] h-[56px] blur-[4] mt-[145px] mr-10 flex items-center justify-between"
+        >
+        <h1 class="font-mono font-medium text-[15px] text-[#FFFFFF]">DAFTAR SEKARANG</h1>
+        <ArrowUpRight size={20} color="#FFFFFF"/>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</LayOutMain>
