@@ -171,7 +171,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 
 function CarouselPrevious({
   className,
-  variant = "buttonCarousel",
+  variant = "outline",
   size = "icon",
   ...props
 }: React.ComponentProps<typeof Button>) {
@@ -183,7 +183,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        // "border-2 border-[#AB0103] w-10 h-10 flex items-center justify-center",
+        "border-2 rounded-none border-[#AB0103] w-10 h-10 flex items-center justify-center",
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -213,7 +213,7 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "border-2 border-[#AB0103] w-10 h-10 flex items-center justify-center",
+        "border-2 rounded-none border-[#AB0103] w-10 h-10 flex items-center justify-center",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",

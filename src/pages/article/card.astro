@@ -1,0 +1,24 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { dataIcon } from "@/data/article";
+---
+
+<section>
+  <div class="bg-[#FFFFFF] h-[500px] w-full items-center justify-center p-16">
+    <div class="grid grid-cols-3 gap-[5px] place-items-center">
+      {dataIcon.map((articles) => {
+        const Icon = articles.icon;
+        return (
+          <div
+            class="bg-[#F2E5CF] w-[395px] h-[308px] flex flex-col items-center justify-center gap-4 shadow">
+            <Icon class="w-10 h-10 text-[#171826]" />
+            <h1 class="font-rethink font-medium text-[20px] text-[#171826]">
+              {articles.title}
+            </h1>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

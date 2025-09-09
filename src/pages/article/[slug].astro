@@ -1,0 +1,42 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { articles } from "@/data/article";
+import LayOutMain from "@/layouts/LayOutMain.astro";
+import { Button } from "@/components/ui/button";
+import CallToAction from "./call-to-action.astro";
+
+export async function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<LayOutMain>
+  <div class="bg-[#FFFFFF] h-[2439px] w-full p-16">
+    <a href="/article/">
+      <Button variant={"default"} className="bg-[#535353] mt-[40px]">Back</Button>
+    </a>
+    <h1 class="font-barlow font-normal text-[32px] text-[#AB0103]">
+      {article.category}
+    </h1>
+    <h1 class="font-barlow font-medium text-[98px] text-[#171826]">
+      {article.title}
+    </h1>
+    <h1 class="font-barlow font-normal text-[32px] text-[#595959]">
+      {article.date}
+    </h1>
+    <div class="flex items-center justify-center">
+      <img src={article.hero} alt={article.title} />
+    </div>
+    <article class="font-rethink font-normal text-[20px] text-[#171826]">
+      <p class="whitespace-pre-wrap">{article.content}</p>
+    </article>
+  </div>
+  <CallToAction/>
+</LayOutMain>
+

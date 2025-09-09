@@ -1,0 +1,21 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { articles } from "@/data/article";
+---
+
+<section>
+  <div class="bg-[#FFFFFF] w-full h-[1650px]">
+    <div
+      class="flex flex-wrap grid-cols-2 grid-row-3 items-center justify-center gap-[48px]"
+    >
+      {
+        articles.map((article) => (
+          <a href={"/article/" + article.slug}>
+            <img src={article.hero} alt="Hero Component" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

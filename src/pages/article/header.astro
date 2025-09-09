@@ -1,0 +1,23 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { dataContent } from "@/data/article";
+---
+
+<section>
+    <div class="relative bg-[#FFFFFF] h-[771px] w-full flex flex-col items-center justify-center">
+        <div class="absolute z-10 top-[180px] flex flex-col items-center justify-center">
+            <h1 class="font-rethink font-normal text-[#AB0103] text-[48px]">ギャラリー</h1>
+            <h1 class="font-rethink font-medium text-[#171826] text-[96px]">Artikel</h1>
+
+            <div class="h-[302px] w-[480px] flex flex-col gap-10 text-center">
+                {
+                dataContent.map((article)=> (
+                    <p class="font-rethink font-medium text-[#171826] text-[20px]">{article.desc}</p>
+                    <p class="font-rethink font-medium text-[#171826] text-[20px]">{article.japaneseDesc}</p>
+                ))
+            }
+            </div>
+        </div>
+    </div>
+</section>
