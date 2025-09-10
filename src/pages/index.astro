@@ -1,13 +1,22 @@
 ---
-import "../styles/global.css";
-// Component Imports
+import "tailwindcss";
+import "@/styles/global.css";
+import Fasilitases from "@/pages/home/fasilitases.astro";
+import VisiAndMission from "@/pages/home/visi-and-mission.astro";
+import GaleryMethod from "@/pages/home/galery-method.astro";
+import FieldWork from "@/pages/home/field-work.astro";
+import SupportWork from "@/pages/home/support-work.astro";
+import CallToAction from "@/pages/home/call-to-action.astro";
+import Header from "@/pages/home/header.astro";
 import LayOutMain from "@/layouts/LayOutMain.astro";
-import HomePage from "@/pages/home/index.astro";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
 ---
 
-  <LayOutMain>
-    <HomePage />
-  </LayOutMain>
+<LayOutMain>
+  <Header />
+  <Fasilitases />
+  <VisiAndMission />
+  <GaleryMethod />
+  <FieldWork />
+  <SupportWork />
+  <CallToAction />
+</LayOutMain>

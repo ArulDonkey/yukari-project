@@ -1,0 +1,23 @@
+---
+import { Clock, Phone, Instagram } from "lucide-react";
+import { InputForm } from "./component/formRegis.tsx";
+---
+
+<div
+  class="bg-[url('/assets/images/regis/bg-enroll.png')] relative flex justify-between p-16 bg-no-repeat bg-center bg-cover h-[870px] w-full"
+>
+  <div class="h-[555px] w-[518px] mt-[120px]">
+    <h1 class="font-rethink font-normal text-[48px] text-[#FFFFFF]">
+      お問い合わせ
+    </h1>
+    <h1
+      class="font-rethink font-medium text-[80px] text-[#FFFFFF] mt-5 uppercase"
+    >
+      Daftar Sekarang
+    </h1>
+  </div>
+
+  <div class="bg-[#F6F9FB] w-[520px] h-[520px] mt-[120px] p-16 flex flex-col">
+    <InputForm client:load />
+  </div>
+</div>

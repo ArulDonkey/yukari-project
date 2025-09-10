@@ -1,0 +1,63 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { Clock, Phone, Instagram } from "lucide-react";
+import { InputForm } from "./component/formContact.tsx";
+---
+
+<div
+  class="bg-[url('/assets/images/contact/BG-conteact.png')] relative flex justify-between p-16 bg-no-repeat bg-center bg-cover h-[870px] w-full"
+>
+  <div class="h-[555px] w-[518px] mt-[120px]">
+    <h1 class="font-rethink font-normal text-[48px] text-[#FFFFFF]">
+      お問い合わせ
+    </h1>
+    <h1 class="font-rethink font-medium text-[80px] text-[#FFFFFF] mt-5">
+      CONTACT US
+    </h1>
+    <h3 class="font-mono font-medium text-[16px] text-[#FFFFFF] mt-16">
+      ADDRESS & CONTACTS
+    </h3>
+    <h3 class="font-rethink font-medium text-[16px] text-[#FFFFFF] mt-[12px]">
+      Ruko Harmoni Hz 2 No.40-41, Pusaka Rakyat, Kec. Tarumajaya, Kabupaten
+      Bekasi, Jawa Barat 17214
+    </h3>
+    <h3
+      class="font-mono font-medium text-[16px] text-[#FFFFFF] mt-[12px] flex items-start gap-3"
+    >
+      <Clock size={20} />Senin-Jum’at: 09.00 - 16.00 WIB
+    </h3>
+    <h3
+      class="font-mono font-medium text-[16px] text-[#FFFFFF] mt-[12px] flex items-start gap-3"
+    >
+      <Phone size={20} />(021) 38714060
+    </h3>
+    <h3
+      class="font-mono font-medium text-[16px] text-[#FFFFFF] mt-[12px] flex items-start gap-3"
+    >
+      <img
+        src="/assets/svgs/contact/ic_twotone-whatsapp.svg"
+        alt="WhatsApps"
+        sizes="20px"
+      /> +6285285913009
+    </h3>
+    <h3
+      class="font-mono font-medium text-[16px] text-[#FFFFFF] mt-[12px] flex items-start gap-3"
+    >
+      <Instagram size={20} />yukari_indonesia
+    </h3>
+    <h3
+      class="font-mono font-medium text-[16px] text-[#FFFFFF] mt-[12px] flex items-start gap-3"
+    >
+      <img
+        src="/assets/svgs/contact/tiktok.svg"
+        alt="Tiktok"
+        sizes="20px"
+      />yukari_indonesia
+    </h3>
+  </div>
+
+  <div class="bg-[#F6F9FB] w-[520px] h-[518px] mt-[120px] p-16 flex flex-col">
+    <InputForm client:load />
+  </div>
+</div>

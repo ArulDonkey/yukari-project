@@ -58,9 +58,9 @@ export function InputForm() {
               </FormControl>
               <FormControl className="h-[42px] w-[390px] rounded-none">
                 <Input placeholder="Subject" {...field} />
-              </FormControl>
+              </FormControl>  
               <FormControl className="h-[127px] w-[390px] rounded-none">
-                <Input placeholder="Full Name" {...field} className="flex items-start justify-items-start"/>
+                <Input placeholder="Message" {...field} />
               </FormControl>
               <FormMessage />
               <Button
