@@ -2,26 +2,30 @@
 import "tailwindcss";
 import "@/styles/global.css";
 import Background from "@/components/Background.astro";
+import { dataHeaderContent } from "@/data/home";
 ---
 
 <section class="relative flex">
   <Background />
-  <div
+  {
+    dataHeaderContent.map((home)=>{
+      const Icon = home.iconButton;
+      return (
+        <div
     class="absolute top-[55vh] right-0 z-10 bg-[#00000066] text-white p-5 w-[408px] h-[264px]"
   >
     <div class="pr-15">
       <p class="text-wrap text-[16px] text-[#FFFFFF] leading-relaxed font-rethink">
-        Melangkahlah dengan penuh kepastian. Karena di LPK Yukari, kami
-        berkomitmen untuk menuntun Anda dalam perjalanan meniti karir di Jepang
-        — dengan penuh perhatian, integritas, dan dukungan di setiap langkahnya.
+        {home.desc}
       </p>
-      <div class="mt-2">  
+      <div class="h-[48px] w-[288px] mt-4 px-4 py-2 bg-transparant border-2 flex justify-between">  
         <a
-        href="#"
-        class="inline-block mt-4 px-4 py-2 bg-transparant text-white font-semibold border-2 transition font-rethink"
+        href="/"
+        class="transition font-rethink text-[#FFFFFF] font-semibold "
       >
-        KENALI YUKARI LEBIH DEKAT
+        {home.buttonText} 
       </a>
+      <Icon class="h-[16px] w-[16px]"/>
       </div>
     </div>
   </div>
@@ -31,12 +35,16 @@ import Background from "@/components/Background.astro";
       <!-- Content Desc -->
       <div class="">
         <h1 class="text-[115px] tracking-wider font-semibold font-rethink text-[#FFFFFF] animate-fadeIn">
-          WALK THE FUTURE
+          {home.title}
         </h1>
         <h3 class="text-2xl text-gray-200 tracking-[.15] font-barlow font-semibold leading-relaxed animate-fadeIn">
-            未 来 を と も に 歩 む
+            {home.subTitle}
         </h3>
       </div>
     </div>
-  </div>
+    </div>
+        )
+      } 
+    )
+  }
 </section>

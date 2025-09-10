@@ -1,46 +1,45 @@
 ---
 import "tailwindcss";
 import "@/styles/global.css";
+import { dataImageVisiMision } from "@/data/home";
+import { dataVisi } from "@/data/home";
+import { dataMision } from "@/data/home";
 ---
 
-<section class="bg-white py-16">
-  <div
-    class="max-w-7xl mx-auto mt-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
-  >
-    <div class="grid grid-rows-2 gap-4 h-[465px]">
-      <img
-        src="/assets/images/visi-misi-1.png"
-        alt="Kerjasama"
-        class="w-full h-full object-cover shadow"
-      />
-      <div class="grid grid-cols-2 gap-4">
-        <img
-          src="/assets/images/visi-misi-2.png"
-          alt="Pekerja"
-          class="w-full h-40 object-cover shadow"
-        />
-        <img
-          src="/assets/images/visi-misi-3.png"
-          alt="Tim"
-          class="w-full h-40 object-cover shadow"
-        />
-      </div>
+<section
+  class="bg-[#FFFFFF] h-[758px] w-full flex items-center justify-center p-12"
+>
+  <div class="w-[1312px] h-[502px] grid grid-cols-2 gap-[64px]">
+    <div class="grid grid-cols-2 grid-rows-2 gap-4 h-[502px] w-[624px]">
+      {
+        dataImageVisiMision.map((home, index) => (
+          <div class={`relative ${index === 0 ? "col-span-2" : ""}`}>
+            <img
+              src={home.hero}
+              alt={home.id}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        ))
+      }
     </div>
-    <div class="bg-[#f4e8d8] p-8 shadow h-[400px]">
-      <h2 class="text-[22px] font-bold mb-4">Visi</h2>
-      <p class="mb-6 text-[16px] leading-relaxed">
-        Menciptakan SDM yang Tangguh, Berkualitas, Siap Kerja dan Bermoral
-        sehingga mampu berkontribusi terhadap Masyarakat.
-      </p>
+    <div class="bg-[#f4e8d8] p-8 shadow h-[502px]">
+      <h2 class="text-[48px] text-[#171826] font-rethink font-medium mb-2">Visi</h2>
+      {
+        dataVisi.map((home) => (
+          <p class="mb-4 text-[20px] font-rethink font-normal text-[#171826] leading-relaxed">
+            {home.descVisi}
+          </p>
+        ))
+      }
 
-      <h2 class="text-[22px] font-bold mb-4">Misi</h2>
-      <ul class="list-disc pl-5 space-y-2 text-[16px] leading-relaxed">
-        <li>Pendidikan dan Pelatihan dengan standar Jepang</li>
-        <li>
-          Memopromosikan Program Magang Jepang untuk Meningkatkan Keterampilan
-          Pemuda Indonesia
-        </li>
-        <li>Membantu pemerintah Indonesia mengurangi tingkat pengangguran</li>
+      <h2 class="text-[48px] text-[#171826] font-rethink font-medium mb-2">Misi</h2>
+      <ul class="list-disc pl-5 space-y-2 text-[20px] font-rethink font-normal text-[#171826] leading-relaxed">
+        {
+          dataMision.map((home)=>(
+            <li>{home.descMision}</li>
+          ))
+        }
       </ul>
     </div>
   </div>

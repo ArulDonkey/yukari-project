@@ -1,0 +1,28 @@
+---
+import "tailwindcss";
+import "@/styles/global.css";
+import { dataDepartementBackground, dataDepartementComponent } from "@/data/home";
+---
+
+{
+  dataDepartementBackground.map((home) => (
+    <div class="relative bg-[#2E3B4D] bg-blend-luminosity bg-cover h-[384px] w-full flex items-center justify-center" style={`background-image: url('${home.background}')`}>
+      <div class="absolute h-[256px] w-full">
+        <div class="absolute inset-0 flex justify-center items-center">
+          <div class="grid grid-cols-3 gap-16">
+            {dataDepartementComponent.map((home) => {
+              const Icon = home.icon;
+              return (
+                <div class="flex flex-col items-center text-white">
+                  <Icon className="w-10 h-10 mb-2" />
+                  <span class="text-2xl font-semibold">{home.amount}</span>
+                  <p class="text-sm mt-1 text-center">{home.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))
+}

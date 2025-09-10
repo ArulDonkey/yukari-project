@@ -2,49 +2,47 @@
 import "tailwindcss";
 import "@/styles/global.css";
 import { School, Sofa, LibraryBig, Hotel } from "lucide-react";
+import { dataFasiitasesHero, dataFasilitasesComponent } from "@/data/home";
 ---
 
 <section>
   <div class="bg-[#FFFFFF] p-16">
-    <h1 class="font-rethink font-normal text-[#AB0103] text-4xl">
-      支援施設（しえんしせつ)
-    </h1>
-    <h1 class="font-rethink font-medium text-[#171826] text-6xl">
-      Fasilitas Pendukung
-    </h1>
+    {
+      dataFasiitasesHero.map((home)=>(
+        <h1 class="font-rethink font-normal text-[#AB0103] text-4xl">
+      {home.subTitle}
+        </h1>
+        <h1 class="font-rethink font-medium text-[#171826] text-6xl">
+      {home.title}
+        </h1>
+      ))
+    }
     <div class="grid grid-cols-2 gap-[64px] mt-10">
       <div
         class="relative grid grid-flow-col grid-cols-2 grid-rows-2 gap-[16px] w-[624px] h-[620px]"
       >
-        <div class="bg-[#F2E5CF] h-[308px] w-[310px] flex flex-col items-center justify-center">
-          <School color="#171826" className="h-[52.7px] w-[53.33px]" />
-          <h1 class="font-barlow font-medium text-[20px]">Classroom</h1>
-        </div>
-        <div
-          class="bg-[#F2E5CF] h-[308px] w-[310px] flex flex-col items-center justify-center"
-        >
-          <LibraryBig color="#171826" className="h-[52.7px] w-[53.33px]" />
-          <h1 class="font-barlow font-medium text-[20px]">Library</h1>
-        </div>
-        <div
-          class="bg-[#F2E5CF] h-[308px] w-[310px] flex flex-col items-center justify-center"
-        >
-          <Sofa color="#171826" className="h-[52.7px] w-[53.33px]" />
-          <h1 class="font-barlow font-medium text-[20px]">Teacher Lounge</h1>
-        </div>
-        <div
-          class="bg-[#F2E5CF] h-[308px] w-[310px] flex flex-col items-center justify-center"
-        >
-          <Hotel color="#171826" className="h-[52.7px] w-[53.33px]" />
-          <h1 class="font-barlow font-medium text-[20px]">Dormitory</h1>
-        </div>
+        {
+          dataFasilitasesComponent.map((home)=>{
+            const Icon = home.icon
+            return (
+              <div class="bg-[#F2E5CF] h-[308px] w-[310px] flex flex-col items-center justify-center">
+                <Icon color="#171826" className="h-[52.7px] w-[53.33px]" />
+                <h1 class="font-barlow font-medium text-[20px]">{home.textIcon}</h1>
+              </div>
+            )
+          })
+        }
       </div>
       <!-- Gambar -->
-      <img
-        src="/assets/images/pexels-jeswin-3380743 1.png"
-        alt="Fasilitas Pendukung (Gambar)"
-        class="h-[624px] w-[620px]"
-      />
+      {
+        dataFasiitasesHero.map((home)=>(
+          <img
+          src={home.image}
+          alt={home.id}
+          class="h-[624px] w-[620px]"
+        />
+        ))
+      }
     </div>
   </div>
 </section>
