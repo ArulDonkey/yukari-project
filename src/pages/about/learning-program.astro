@@ -1,13 +1,26 @@
 ---
 import "tailwindcss";
 import "@/styles/global.css";
+import { dataLearningProgram } from "@/data/about";
+import { Separator } from "@/components/ui/separator";
 ---
 
 <section>
-    <div class="bg-[#FFFFFF] h-[1190px] w-full">
+  {
+    dataLearningProgram.map((about) => (
+      <div class="bg-[#FFFFFF] h-[1190px] w-full">
         <div class="absolute z-10 p-16 flex flex-col items-center">
-            <h1 class="font-rethink font-medium text-[96px] text-[#171826]">Program Belajar</h1>
-            <img src="/assets/images/program-belajar.png" alt="Program Belajar" class="mt-[120px]">
+          <h1 class="font-rethink font-medium text-[96px] text-[#171826]">
+            {about.title}
+          </h1>
+          <Separator className="w-[1220px] h-[1px] bg-[#A3C7D2] mt-20" />
+          <img
+            src={about.image}
+            alt={about.title}
+            class="mt-[120px]"
+          />
         </div>
-    </div>
+      </div>
+    ))
+  }
 </section>

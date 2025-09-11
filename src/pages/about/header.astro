@@ -1,23 +1,27 @@
 ---
 import "tailwindcss";
 import "@/styles/global.css";
+import { dataHeaderAbout } from "@/data/about";
 ---
 
 <section>
-  <div
-    class="bg-[url('/assets/images/background-about.png')] relative flex bg-black backdrop-brightness-50 bg-no-repeat bg-center bg-cover h-screen w-full"
-  >
-    <div class="absolut p-16 z-10 flex flex-col items-end justify-end">
-      <div>
-        <h1 class="font-rethink font-semibold text-[#FFFFFF] text-[128px]">
-          BUILT ON TRUST
-        </h1>
-        <h1
-          class="font-rethink font-semibold text-[#FFFFFF] text-[32px] tracking-wide"
-        >
-          信 頼 を 土 台 に
-        </h1>
+  {
+    dataHeaderAbout.map((home) => (
+      <div
+        class="relative flex bg-black backdrop-brightness-50 bg-no-repeat bg-center bg-cover h-screen w-full"
+        style={`background-image: url('${home.background}')`}
+      >
+        <div class="absolut p-16 z-10 flex flex-col items-end justify-end">
+          <div>
+            <h1 class="font-rethink font-semibold text-[#FFFFFF] text-[128px]">
+              {home.title}
+            </h1>
+            <h1 class="font-rethink font-semibold text-[#FFFFFF] text-[32px] tracking-wide">
+              {home.subTitle}
+            </h1>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    ))
+  }
 </section>

@@ -1,29 +1,27 @@
 ---
 import "tailwindcss";
 import "@/styles/global.css";
-import { dataCTABackground, dataCTAComponent } from "@/data/home";
+import { dataCTABackground, dataCTAComponent } from "@/data/cta";
 ---
 
 <section>
   {
-    dataCTABackground.map((home) => (
+    dataCTABackground.map((cta) => (
       <div
         class="bg-no-repeat bg-center bg-cover h-[416px] w-full"
-        style={`background-image: url('${home.background}')`}
+        style={`background-image: url('${cta.background}')`}
       >
-        {dataCTAComponent.map((home) => {
-          const Icon = home.icon;
+        {dataCTAComponent.map((cta) => {
+          const Icon = cta.icon;
           return (
             <div class="flex flex-row items-center justify-between">
               <div class="bg-[#00000066] w-[416px] h-[156px] blur-[4] mt-[145px] flex items-center justify-center">
-                <h1 class="font-barlow font-medium text-[48px] text-[#FFFFFF] ml-8">
-                  {home.title}
-                </h1>
+                <h1 class="font-barlow font-medium text-[48px] text-[#FFFFFF] ml-8">{cta.title}</h1>
               </div>
-              <a href="/regis">
+              <a href="/">
                 <div class="bg-[#00000066] border-[2px] p-5 w-[195px] h-[56px] blur-[4] mt-[145px] mr-10 flex items-center justify-between">
                   <h1 class="font-mono font-medium text-[15px] text-[#FFFFFF]">
-                    {home.textButton}
+                    {cta.textButton}
                   </h1>
                   <Icon size={20} color="#FFFFFF" />
                 </div>

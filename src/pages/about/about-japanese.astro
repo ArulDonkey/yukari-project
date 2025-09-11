@@ -2,118 +2,52 @@
 import "tailwindcss";
 import "@/styles/global.css";
 import { Separator } from "@radix-ui/react-separator";
+import { dataAboutJHOL } from "@/data/about";
+import { dataIconJHOL } from "@/data/about";
 ---
 
-<div class="bg-[#FFFFFF] h-[1450px] w-full">
-  <div class="absolute p-16">
-    <div class="w-[960px] h-[536px]">
-      <h1 class="font-rethink font-medium text-[48px] text-[#AB0103]">
-        TENTANG J-HOL
-      </h1>
-      <h1
-        class="font-rethink font-medium text-[85px] text-[#171826] leading-[100px] mt-3"
-      >
-        Tentang Japanese Hybrid Online Learning (J-HOL)
-      </h1>
-      <p class="font-rethink font-medium text-[#171826] text-[22px] mt-8">
-        Gabungan pembelajaran online dan tatap muka – versi unggulan pendidikan
-        bahasa Jepang “J-HOL”. Materi pembelajaran yang dirancang dengan
-        pengalaman lebih dari 15 tahun dalam pengajaran bahasa Jepang.
-      </p>
-    </div>
+{
+  dataAboutJHOL.map((about) => (
+    <div class="h-[2043px] w-full">
+      <div class="absolute p-16">
+        <div class="w-[960px] h-[293px]">
+          <h1 class="font-rethink font-medium text-[85px] text-[#171826] leading-[100px] mt-3">
+            {about.titile}
+          </h1>
+          <p class="font-rethink font-medium text-[#171826] text-[22px] mt-8">
+            {about.desc}
+          </p>
+        </div>
+        <Separator className="w-[1220px] h-[1px] bg-[#A3C7D2] mt-40" />
+        <img src={about.hero} alt={about.titile} class="mt-20" />
 
-    <Separator className="w-[1220px] h-[1px] bg-[#A3C7D2] mt-20"/>
+        <Separator className="w-[1220px] h-[1px] bg-[#A3C7D2] mt-20" />
 
-    <div class="h-[541px] w-[1220px] mt-20">
-      <div
-        class="flex items-start justify-start flex-wrap grid-cols-3 grid-rows-2 gap-[40px]"
-      >
-        <div class="bg-white w-[380px] h-[194px]">
-          <img
-            src="/assets/svgs/thumb-up.svg"
-            alt="ThumbUp"
-            class="h-[96px] w-[96px]"
-          />
-          <h1 class="font-rethink font-semibold text-[20px] text-[#171826] mt-5">
-            Kualitas Pembelajaran Terjamin
-          </h1>
-          <p class="font-rethink font-normal text-[16px] text-[#171826] mt-1">
-            Kurikulum disusun di bawah supervisi profesor dari Universitas
-            Waseda, sehingga kualitasnya terjamin.
-          </p>
+        <div class="h-[541px] w-[1220px] mt-20">
+          <div class="flex items-start justify-start flex-wrap grid-cols-3 grid-rows-2 gap-[40px]">
+            {dataIconJHOL.map((about, index) => (
+              <div class="bg-[#FFFFFF] w-[380px] h-[194px] grid">
+                <img
+                  src={about.icon}
+                  alt={about.id}
+                  class="h-[96px] w-[96px]"
+                />
+                <h1 class="font-rethink font-semibold text-[20px] text-[#171826]">
+                  {about.title}
+                </h1>
+                <p class="font-rethink font-normal text-[15px] text-[#171826]">
+                  {about.desc}
+                </p>
+                <div class="mt-10">
+                  {index < 3 && (
+                    <Separator className="w-[383px] h-[1px] bg-[#A3C7D2]" />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="bg-white w-[380px] h-[194px]">
-          <img
-            src="/assets/svgs/smile.svg"
-            alt="ThumbUp"
-            class="h-[96px] w-[96px]"
-          />
-          <h1 class="font-rethink font-semibold text-[20px] text-[#171826] mt-5">
-            Aplikasi Mudah Digunakan
-          </h1>
-          <p class="font-rethink font-normal text-[16px] text-[#171826] mt-1">
-            Bagian yang dirasa sulit dapat terlihat dengan jelas, sehingga dapat
-            dipelajari lebih intensif.
-          </p>
-        </div>
-        <div class="bg-white w-[380px] h-[194px]">
-          <img
-            src="/assets/svgs/list.svg"
-            alt="ThumbUp"
-            class="h-[96px] w-[96px]"
-          />
-          <h1 class="font-rethink font-semibold text-[20px] text-[#171826] mt-5">
-            4 Level Kemampuan
-          </h1>
-          <p class="font-rethink font-normal text-[16px] text-[#171826] mt-1">
-            Terdapat 4 tingkatan pembelajaran, level 0-3, sehingga siswa dapat
-            belajar sesuai dengan kemampuan
-          </p>
-        </div>
-        <div class="bg-white w-[380px] h-[194px]">
-          <img
-            src="/assets/svgs/square-play.svg"
-            alt="ThumbUp"
-            class="h-[96px] w-[96px]"
-          />
-          <h1 class="font-rethink font-semibold text-[20px] text-[#171826] mt-5">
-            Animasi
-          </h1>
-          <p class="font-rethink font-normal text-[16px] text-[#171826] mt-1">
-            Bisa terus semangat belajar karena sambil nonton animasi
-          </p>
-        </div>
-        <div class="bg-white w-[380px] h-[194px]">
-          <img
-            src="/assets/svgs/speech.svg"
-            alt="ThumbUp"
-            class="h-[96px] w-[96px]"
-          />
-          <h1 class="font-rethink font-semibold text-[20px] text-[#171826] mt-5">
-            Pengawasan Oleh Profesional
-          </h1>
-          <p class="font-rethink font-normal text-[16px] text-[#171826] mt-1">
-            Pembelajaran dilakukan secara daring (online) dengan bimbingan
-            langsung oleh pengajar profesional di bidang pendidikan bahasa
-            Jepang.
-          </p>
-        </div>
-        <div class="bg-white w-[380px] h-[194px]">
-          <img
-            src="/assets/svgs/check-check.svg"
-            alt="ThumbUp"
-            class="h-[96px] w-[96px]"
-          />
-          <h1 class="font-rethink font-semibold text-[20px] text-[#171826] mt-5">
-            Praktis dan Fleksibel
-          </h1>
-          <p class="font-rethink font-normal text-[16px] text-[#171826] mt-1">
-            Materi dapat diakses melalui berbagai perangkat, memungkinkan
-            pembelajaran kapan saja dan di mana
-          </p>
-        </div>
-        <Separator className="w-[1220px] h-[1px] bg-[#A3C7D2] mt-20"/>
       </div>
     </div>
-  </div>
-</div>
+  ))
+}

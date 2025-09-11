@@ -1,37 +1,31 @@
 ---
 import "tailwindcss";
 import "@/styles/global.css";
+import { dataAboutLPKYukari } from "@/data/about";
 ---
 
 <section>
-  <div class="bg-[#FFFFFF] h-[1556.32px] w-full relative flex">
-    <div
-      class="absolute p-16 pr-5 mt-8 z-10 h-[542px] w-[1312px]"
-    >
-     <div class="flex justify-between gap-[48px]">
-         <div class="h-[149px] w-[800px]">
-        <h1 class="font-rethink font-normal text-[48px] text-[#AB0103]">
-          縁について
-        </h1>
-        <h1 class="font-rethink font-medium text-[80px] text-[#171826]">
-          Tentang LPK Yukari
-        </h1>
+  {
+    dataAboutLPKYukari.map((home) => (
+      <div class="bg-[#FFFFFF] h-[798px] w-full relative flex">
+        <div class="absolute p-16 pr-5 mt-8 z-10 h-[542px] w-[1312px]">
+          <div class="flex justify-between gap-[48px]">
+            <div class="h-[149px] w-[800px]">
+              <h1 class="font-rethink font-normal text-[48px] text-[#AB0103]">
+                {home.subtitle}
+              </h1>
+              <h1 class="font-rethink font-medium text-[80px] text-[#171826]">
+                {home.title}
+              </h1>
+            </div>
+            <div class="h-[542px] w-[464px]">
+              <p class="whitespace-pre-line font-rethink font-medium text-[20px] ">
+                {home.desc}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="h-[542px] w-[464px]">
-        <p class="whitespace-pre-line font-rethink font-medium text-[20px] ">
-          LPK Yukari Indonesia yang merupakan afiliasi dari TSK Technosmile Japan adalah lembaga resmi yang fokus pada pelatihan dan pembinaan untuk ke Jepang melalui program TITP (Technical Intern Training Program), SSW (Specified Skilled Worker), dan Engineer
-          
-          Metode pembelajaran yang digunakan di LPK Yukari Indonesia adalah metode pembelajaran original; Japanese Hybrid Online Learning (J-HOL)..
-
-          LPK Yukari Indonesiaは、TSKテクノスマイルの日本法人であり、技能実習（TITP）、特定技能（SSW）、およびエンジニアとして日本で働くことを目指す方々を対象に、トレーニングと指導を行っている認定機関です。
-
-          当校では、独自の教育手法である「Japanese Hybrid Online Learning（J-HOL）」を採用しています。
-        </p>
-      </div>
-     </div>
-      <div class="mt-40">
-        <img src="/assets/images/Picture1.png" alt="Picture 1">
-      </div>
-    </div>
-  </div>
+    ))
+  }
 </section>

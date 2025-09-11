@@ -3,6 +3,7 @@ import NavBar from '@/components/NavBar.astro';
 import '../styles/global.css';
 import "tailwindcss";
 import Footer from "@/components/Footer.astro";
+import CallToAction from "@/components/CTA.astro";
 ---
 
 <html lang="en">
@@ -15,6 +16,7 @@ import Footer from "@/components/Footer.astro";
 	<body>
 		<NavBar/>
 		<slot />
+		<CallToAction/>
 		<Footer/>
 	</body>
 </html>
